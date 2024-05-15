@@ -1,0 +1,32 @@
+//toggleClass-active on click
+document.addEventListener("DOMContentLoaded", function () {
+    function toggleClass(event) {
+        event.target.classList.toggle('active');
+    }
+    var elements = document.querySelectorAll('.clickable-element');
+    elements.forEach(function (element) {
+        element.addEventListener('click', toggleClass);
+    });
+});
+
+// $(document).ready(function() {
+//     function toggleClass() {
+//         $(this).toggleClass('active');
+//     }
+//     $('.clickable-element, .another-clickable-element').on('click', toggleClass);
+// });
+
+//toggleClass-active on hover
+document.addEventListener("DOMContentLoaded", function () {
+    function addActiveClass(event) {
+        event.target.classList.add('active');
+    }
+    function removeActiveClass(event) {
+        event.target.classList.remove('active');
+    }
+    var elements = document.querySelectorAll('.someor');
+    elements.forEach(function (element) {
+        element.addEventListener('mouseover', addActiveClass);
+        element.addEventListener('mouseout', removeActiveClass);
+    });
+});
